@@ -10,8 +10,8 @@ class Color:
 
 class Cell(object):
 
-    def set_color(text, color):
-        return color + text + Color.reset
+    def set_color(self, color):
+        return color + self + Color.reset
 
     ship_cell = set_color('■', Color.blue)
     damaged_ship = set_color('X', Color.red)
