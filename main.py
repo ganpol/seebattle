@@ -267,12 +267,12 @@ class Game:
             if repeat:
                 num -= 1
 
-            if self.ai.board.count == 7:
+            if self.ai.board.count == len(self.ai.board.ships):
                 print("-" * 20)
                 print("Пользователь выиграл!")
                 break
 
-            if self.us.board.count == 7:
+            if self.us.board.count == len(self.us.board.ships):
                 print("-" * 20)
                 print("Компьютер выиграл!")
                 break
