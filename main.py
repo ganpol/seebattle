@@ -204,6 +204,8 @@ class User(Player):
 
 
 class Game:
+
+# Создаем доску для игроков
     def __init__(self, size=6):
         self.size = size
         pl = self.random_board()
@@ -213,12 +215,14 @@ class Game:
         self.ai = AI(co, pl)
         self.us = User(pl, co)
 
+# Цикл при котором создается в любом случае играбельная доска
     def random_board(self):
         board = None
         while board is None:
             board = self.random_place()
         return board
 
+# Создаем и расставляем корабли на доске
     def random_place(self):
         lens = [4, 3, 2, 2, 1, 1, 1]
         board = Board(size=self.size)
@@ -237,6 +241,7 @@ class Game:
         board.begin()
         return board
 
+# Приветствие при начале игры
     def greet(self):
         print("-------------------")
         print("  Приветсвуем вас  ")
@@ -247,15 +252,20 @@ class Game:
         print(" x - номер строки  ")
         print(" y - номер столбца ")
 
+# Выводим на экран доски для игроков
+    def print_board(self):
+        print("-" * 20)
+        print("Доска пользователя:")
+        print(self.us.board)
+        print("-" * 20)
+        print("Доска компьютера:")
+        print(self.ai.board)
+
+#
     def loop(self):
         num = 0
         while True:
-            print("-" * 20)
-            print("Доска пользователя:")
-            print(self.us.board)
-            print("-" * 20)
-            print("Доска компьютера:")
-            print(self.ai.board)
+            self.print_board()
             if num % 2 == 0:
                 print("-" * 20)
                 print("Ходит пользователь!")
