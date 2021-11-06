@@ -243,21 +243,21 @@ class Game:
 
 # Приветствие при начале игры
     def greet(self):
-        print("-------------------")
+        print("-" * 20)
         print("  Приветсвуем вас  ")
         print("      в игре       ")
         print("    морской бой    ")
-        print("-------------------")
+        print("-" * 20)
         print(" формат ввода: x y ")
         print(" x - номер строки  ")
         print(" y - номер столбца ")
 
 # Выводим на экран доски для игроков
     def print_board(self):
-        print("-" * 20)
+        # print("-" * 20)
         print("Доска пользователя:")
         print(self.us.board)
-        print("-" * 20)
+        # print("-" * 20)
         print("Доска компьютера:")
         print(self.ai.board)
 
